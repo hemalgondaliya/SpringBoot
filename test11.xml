@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.7.4
+- https://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Sep 18, 2017 at 12:27 AM
+- Server version: 10.1.26-MariaDB
+- PHP Version: 7.0.22
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="test11" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="catagory">
+                CREATE TABLE `catagory` (
+                  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(50) NOT NULL,
+                  `parent_id` int(11) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `id` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="product">
+                CREATE TABLE `product` (
+                  `id` int(2) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(15) DEFAULT NULL,
+                  `catagory_id` int(3) unsigned NOT NULL,
+                  `price` int(5) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `catagory_id` (`catagory_id`),
+                  CONSTRAINT `FOREIGN KEY` FOREIGN KEY (`catagory_id`) REFERENCES `catagory` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'test11'
+    -->
+    <database name="test11">
+        <!-- Table catagory -->
+        <table name="catagory">
+            <column name="id">9</column>
+            <column name="name">ELECTRONICS</column>
+            <column name="parent_id">0</column>
+        </table>
+        <table name="catagory">
+            <column name="id">10</column>
+            <column name="name">HOME</column>
+            <column name="parent_id">0</column>
+        </table>
+        <table name="catagory">
+            <column name="id">11</column>
+            <column name="name">BOOKS</column>
+            <column name="parent_id">0</column>
+        </table>
+        <table name="catagory">
+            <column name="id">12</column>
+            <column name="name">MUSIC</column>
+            <column name="parent_id">0</column>
+        </table>
+        <table name="catagory">
+            <column name="id">13</column>
+            <column name="name">SPORTS</column>
+            <column name="parent_id">0</column>
+        </table>
+        <table name="catagory">
+            <column name="id">14</column>
+            <column name="name">Alan Walker</column>
+            <column name="parent_id">12</column>
+        </table>
+        <table name="catagory">
+            <column name="id">15</column>
+            <column name="name">Taylor Swif</column>
+            <column name="parent_id">12</column>
+        </table>
+        <table name="catagory">
+            <column name="id">16</column>
+            <column name="name">Door</column>
+            <column name="parent_id">10</column>
+        </table>
+        <table name="catagory">
+            <column name="id">17</column>
+            <column name="name">Window</column>
+            <column name="parent_id">10</column>
+        </table>
+        <table name="catagory">
+            <column name="id">18</column>
+            <column name="name">Laptops</column>
+            <column name="parent_id">9</column>
+        </table>
+        <table name="catagory">
+            <column name="id">19</column>
+            <column name="name">Washing machine</column>
+            <column name="parent_id">9</column>
+        </table>
+        <table name="catagory">
+            <column name="id">20</column>
+            <column name="name">Shadow of Light</column>
+            <column name="parent_id">11</column>
+        </table>
+        <table name="catagory">
+            <column name="id">21</column>
+            <column name="name">Bright side</column>
+            <column name="parent_id">11</column>
+        </table>
+        <table name="catagory">
+            <column name="id">22</column>
+            <column name="name">Badminton</column>
+            <column name="parent_id">13</column>
+        </table>
+        <table name="catagory">
+            <column name="id">23</column>
+            <column name="name">Hockey</column>
+            <column name="parent_id">13</column>
+        </table>
+        <!-- Table product -->
+        <table name="product">
+            <column name="id">19</column>
+            <column name="name">BeatsEarphones</column>
+            <column name="catagory_id">12</column>
+            <column name="price">111</column>
+        </table>
+    </database>
+</pma_xml_export>
